@@ -7,10 +7,16 @@ Created on Mon Jul 15 09:39:37 2024
 
 import numpy as np
 import pickle
+import os
 import streamlit as st
 
-# Load the Saved Model
-loaded_model = pickle.load(open('C:/Users/DAMILARE-PC/Documents/School Materials/UG Project Resources/mlModel/trainedModel.sav', 'rb'))
+# Construct the relative path to the model file
+model_path = os.path.join(os.path.dirname(__file__), 'trainedModel.sav')
+
+# Load the model
+with open(model_path, 'rb') as model_file:
+    model = pickle.load(model_file)
+
 
 # Create a Function for Prediction
 def hypertensionRiskPrediction(inputData):
