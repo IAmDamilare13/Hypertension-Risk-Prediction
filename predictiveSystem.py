@@ -7,11 +7,16 @@ This is a temporary script file.
 
 import numpy as np
 import pickle
+import os
+
+# Construct the relative path to the model file
+model_path = os.path.join(os.path.dirname(__file__), 'mlModel', 'trainedModel.sav')
 
 # Load the Saved Model
-loaded_model = pickle.load(open('C:/Users/DAMILARE-PC/Documents/School Materials/UG Project Resources/mlModel/trainedModel.sav', 'rb'))
+with open(model_path, 'rb') as model_file:
+    loaded_model = pickle.load(model_file)
 
-# Input data
+#Input data
 input_data = [[1, 25, 135, 70, 28.54]]
 
 # Convert the input data to a numpy array
