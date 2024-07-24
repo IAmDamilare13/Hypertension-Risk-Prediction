@@ -35,7 +35,7 @@ def hypertensionRiskPrediction(inputData):
 
 #Function to load and display an image using a relative path
 def load_image(image_filename):
-    image_path = os.path.join(os.path.dirname(__file__), 'images', image_filename)
+    image_path = os.path.join(os.path.dirname(__file__), 'images', 'heart_icon.png')
     return image_path
 
 # Page 1: Home
