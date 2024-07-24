@@ -33,9 +33,14 @@ def hypertensionRiskPrediction(inputData):
     else:
         return 'Error! Verify Input.'
 
+#Function to load and display an image using a relative path
+def load_image(image_filename):
+    image_path = os.path.join(os.path.dirname(__file__), 'images', image_filename)
+    return image_path
+
 # Page 1: Home
 def home():
-    st.image('C:/Users/DAMILARE-PC/Documents/School Materials/UG Project Resources/mlModel/images/heart_icon.png', width=100)
+    st.image(load_image('heart_icon.png'), width=100)
     st.markdown("<h1 style='text-align: center; color: #000;'>Hypertension Risk Prediction</h1>", unsafe_allow_html=True)
     st.write("""
         <div style="text-align: center;">
@@ -56,7 +61,7 @@ def home():
 
 # Page 2: Predict Hypertension Risk
 def predict():
-    st.image('C:/Users/DAMILARE-PC/Documents/School Materials/UG Project Resources/mlModel/images/heart_icon.png', width=100)
+    st.image(load_image('heart_icon.png'), width=100)
     st.markdown("<h1 style='text-align: center; color: #000;'>Hypertension Risk Prediction</h1>", unsafe_allow_html=True)
 
     # Apply custom CSS for labels
@@ -100,7 +105,7 @@ def predict():
 
 # Page 3: About
 def about():
-    st.image('C:/Users/DAMILARE-PC/Documents/School Materials/UG Project Resources/mlModel/images/heart_icon.png', width=100)
+    st.image(load_image('heart_icon.png'), width=100)
     st.markdown("<h1 style='text-align: center; color: #000;'>About The App</h1>", unsafe_allow_html=True)
     st.write("""
         <div style="text-align: center;">
