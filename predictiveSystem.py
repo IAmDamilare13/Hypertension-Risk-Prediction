@@ -10,7 +10,7 @@ import pickle
 import os
 
 # Construct the relative path to the model file
-model_path = os.path.join(os.path.dirname(__file__), 'mlModel', 'trainedModel.sav')
+model_path = os.path.join(os.path.dirname(__file__), 'trainedModel.sav')
 
 # Load the Saved Model
 with open(model_path, 'rb') as model_file:
