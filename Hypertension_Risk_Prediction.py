@@ -15,7 +15,7 @@ model_path = os.path.join(os.path.dirname(__file__), 'trainedModel.sav')
 
 # Load the model
 with open(model_path, 'rb') as model_file:
-    model = pickle.load(model_file)
+    loaded_model = pickle.load(model_file)
 
 
 # Create a Function for Prediction
