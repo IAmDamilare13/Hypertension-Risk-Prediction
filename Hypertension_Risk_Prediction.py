@@ -33,7 +33,7 @@ def hypertensionRiskPrediction(inputData):
     else:
         return 'Error! Verify Input.'
 
-#Function to load and display an image using a relative path
+# Function to load and display an image using a relative path
 def load_image(image_filename):
     image_path = os.path.join(os.path.dirname(__file__), 'images', 'heart_icon.png')
     return image_path
@@ -83,16 +83,12 @@ def predict():
     diastolic_bp = st.number_input('Diastolic BP', min_value=0, max_value=200, step=1)
     bmi = st.number_input('BMI', min_value=0.0, max_value=100.0, step=0.1)
 
-    diagnosis = ''
-
     if st.button('PREDICT'):
         if gender == 'Select' or age == 0 or systolic_bp == 0 or diastolic_bp == 0 or bmi == 0.0:
             st.warning('Please fill in all details.')
         else:
             diagnosis = hypertensionRiskPrediction([gender, age, systolic_bp, diastolic_bp, bmi])
-    
-    if diagnosis:  # Display diagnosis only if it is not empty
-        st.success(diagnosis)
+            st.success(diagnosis)  # Display diagnosis at the top
 
     col1, col2, col3 = st.columns([1, 1, 1])
     with col1:
