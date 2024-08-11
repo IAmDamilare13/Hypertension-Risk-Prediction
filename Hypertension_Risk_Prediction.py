@@ -40,7 +40,7 @@ def load_image(image_filename):
 
 # Page 1: Home
 def home():
-    st.image(load_image('heart_icon.png'), width=100)
+    st.image(load_image('heart_icon.png'), width=100, layout = "centered")
     st.markdown("<h1 style='text-align: center; color: #000;'>Hypertension Risk Prediction</h1>", unsafe_allow_html=True)
     st.write("""
         <div style="text-align: center;">
