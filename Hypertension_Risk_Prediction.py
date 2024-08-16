@@ -81,10 +81,17 @@ def predict():
     age = st.number_input('Age', min_value=0, max_value=120, step=1)
     systolic_bp = st.number_input('Systolic BP', min_value=0, max_value=300, step=1)
     diastolic_bp = st.number_input('Diastolic BP', min_value=0, max_value=200, step=1)
-    bmi = st.number_input('BMI', min_value=0.0, max_value=100.0, step=0.1)
-
+    height = st.number_input('Height (cm)', min_value=0.0, max_value=250.0, step=0.1)
+    weight = st.number_input('Weight (kg)', min_value=0.0, max_value=200.0, step=0.1)
+    
+    # Calculate BMI
+    bmi = weight / (height/100)**2 if height > 0 else 0
+    
+    st.write(f"Calculated BMI: {bmi:.2f}")
+    diagnosis = ''
+    
     if st.button('PREDICT'):
-        if gender == 'Select' or age == 0 or systolic_bp == 0 or diastolic_bp == 0 or bmi == 0.0:
+        if gender == 'Select' or age == 0 or systolic_bp == 0 or diastolic_bp == 0 or height == 0.0 or weight == 0.0:
             st.warning('Please fill in all details.')
         else:
             diagnosis = hypertensionRiskPrediction([gender, age, systolic_bp, diastolic_bp, bmi])
