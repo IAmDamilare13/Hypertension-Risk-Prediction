@@ -75,6 +75,8 @@ def predict():
         """,
         unsafe_allow_html=True
     )
+    
+    st.success(diagnosis)  # Display diagnosis at the top
 
     gender = st.selectbox('Gender', ['Select', 'Male', 'Female'])
     gender = 1 if gender == 'Male' else 0
@@ -95,7 +97,6 @@ def predict():
             st.warning('Please fill in all details.')
         else:
             diagnosis = hypertensionRiskPrediction([gender, age, systolic_bp, diastolic_bp, bmi])
-            st.success(diagnosis)  # Display diagnosis at the top
 
     col1, col2, col3 = st.columns([1, 1, 1])
     with col1:
